@@ -1,0 +1,11 @@
+Ghostline brings the walkie-talkie ritual into your browser. Hold to talk. Release to listen. It is built for small, temporary crews, with a familiar radio interface and no always-open microphone.
+
+Choose a callsign, create a channel, and invite your crew with a code, a link, or a QR invitation generated on your device. Up to six radios can join. Channels expire after four hours.
+
+The connection is real WebRTC audio. A Cloudflare Worker and D1 coordinate membership, signaling, and a single speaker at a time. Microphones start disabled. Releasing the button, leaving the page, or losing focus stops transmission. Each transmission is limited to fifteen seconds.
+
+This local diagnostic uses two real application clients with synthetic tones. It verifies decoded audio in both directions and checks that releasing before a pending grant never opens the microphone. It does not replace a physical two-device test.
+
+Kiro helped implement QR invitations and microphone selection using the project's steering and requirements. Code review exposed a microphone rollback bug, and the follow-up task corrected it. The repository records that work alongside Codex's implementation and verification.
+
+Ghostline resurrects a simple idea: say what matters, then give the channel back.
